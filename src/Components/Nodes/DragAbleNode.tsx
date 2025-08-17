@@ -28,8 +28,7 @@ const DragAbleNode = ({label} : propsType )  => {
     <div
     draggable
     onDragStart={handleDragStart}
-    className="w-full h-[30px] px-2 flex items-center justify-center  space-x-1  ring-amber-50 rounded-xl 
-    hover:border-b-2 border-zinc-400  transition-all ease-in-out duration-75 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+    className={Style( collapseNodesPanel && "justify-center"  , "w-full h-[30px] px-2 flex items-center space-x-1  ring-amber-50 rounded-xl hover:border-b-2 border-zinc-400  transition-all ease-in-out duration-75 hover:bg-zinc-200 dark:hover:bg-zinc-800")}
 
     >
       <Icon type={type} className={Style(" w-4 h-4 inline-flex items-start text-zinc-600 dark:text-green-200" , !collapseNodesPanel && "shrink-0" )} />
