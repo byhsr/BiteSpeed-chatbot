@@ -21,6 +21,8 @@ const BaseNode = ({label, children , id , color}:baseNodeProps) => {
     dispatch(initSetPan({id , isOpen : true}))
     dispatch(toggleNodesPan({isOpen : false}))
   }, [hide])
+  // node dropped in the canvas passes the id so setting pannel can fetch data from nodeEntities[id]
+  // everynode dropped passes its id and data gets replaced 
 
 
   return <motion.div 

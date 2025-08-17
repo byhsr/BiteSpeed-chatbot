@@ -10,6 +10,7 @@ import NodeLabel from "../../Nodes/BaseNode/NodeLabel";
 import Apperance from "./Apperance";
 
 
+
 const SettingsPanel = () => {
 
     const selectSelectedNode = createSelector(
@@ -26,7 +27,6 @@ const SettingsPanel = () => {
 
     if (!selectedNode) return null
 
-    console.log("preloaded content", selectedNode.content)
 
     const [text, setText] = useState(selectedNode.content)
 
@@ -79,7 +79,10 @@ const SettingsPanel = () => {
                     </div>
 
                 </div>
-                {/* <hr /> */}
+
+                {/* temporarily rendering content settings only for nodes of type "message" because other nodes as of now are just for demonstration  */}
+                 
+                {selectedNode.label === "message" &&
                 <div className="flex-2 bg-zinc-100 dark:bg-zinc-800 w-full h-[50%] dark:text-zinc-200 rounded p-2">
                     <span className=" font-Nunito font-semibold
                            rounded text-sm flex flex-inline items-center bg-zinc-200 dark:bg-zinc-900 p-1 px-2"> Content</span>
@@ -88,8 +91,11 @@ const SettingsPanel = () => {
                         onBlur={handleBlur}
                         className="text-[12px]  font-extralight  dark:text-zinc-100 p-1 font-lexend outline-0 w-full h-[90%] placeholder:dark:text-zinc-100 
                         rounded resize-none dark:bg-zinc-800" placeholder="type here." value={text} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => { setText(e.target.value) }} />
-
-                </div>
+                {/* data updates either at enter or onblur to keep redux calls minimal  */}
+                </div> 
+                
+            }
+                
 
                 <div className="w-full bg-zinc-100 dark:bg-zinc-800 h-[30%] dark:text-zinc-200 rounded  p-2">
 
