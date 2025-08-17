@@ -28,7 +28,7 @@ const DragAbleNode = ({label} : propsType )  => {
     <div
     draggable
     onDragStart={handleDragStart}
-    className="w-full h-[30px] px-2 flex items-center  space-x-1  ring-amber-50 rounded-xl 
+    className="w-full h-[30px] px-2 flex items-center justify-center  space-x-1  ring-amber-50 rounded-xl 
     hover:border-b-2 border-zinc-400  transition-all ease-in-out duration-75 hover:bg-zinc-200 dark:hover:bg-zinc-800"
 
     >
