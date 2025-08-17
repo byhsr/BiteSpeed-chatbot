@@ -3,8 +3,8 @@
 A drag-and-drop **chatbot flow builder** built for the BiteSpeed Frontend Task.
 It allows users to visually create chatbot conversation flows with nodes and connections.
 
-deployed link : https://bite-speed-chatbot-q2wc.vercel.app/
-
+[deployed link](https://bite-speed-chatbot-q2wc.vercel.app/)
+Not responsive → best viewed on **desktop/laptop**
 ---
 
 ## ✨ Features
