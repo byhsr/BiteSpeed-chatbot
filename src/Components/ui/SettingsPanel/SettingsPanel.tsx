@@ -8,6 +8,7 @@ import { motion } from "motion/react"
 import { useEffect, useState } from "react";
 import NodeLabel from "../../Nodes/BaseNode/NodeLabel";
 import Apperance from "./Apperance";
+import { div } from "motion/react-client";
 
 
 
@@ -82,7 +83,7 @@ const SettingsPanel = () => {
 
                 {/* temporarily rendering content settings only for nodes of type "message" because other nodes as of now are just for demonstration  */}
                  
-                {selectedNode.label === "message" &&
+                {selectedNode.label === "message" ?
                 <div className="flex-2 bg-zinc-100 dark:bg-zinc-800 w-full h-[50%] dark:text-zinc-200 rounded p-2">
                     <span className=" font-Nunito font-semibold
                            rounded text-sm flex flex-inline items-center bg-zinc-200 dark:bg-zinc-900 p-1 px-2"> Content</span>
@@ -92,7 +93,16 @@ const SettingsPanel = () => {
                         className="text-[12px]  font-extralight  dark:text-zinc-100 p-1 font-lexend outline-0 w-full h-[90%] placeholder:dark:text-zinc-100 
                         rounded resize-none dark:bg-zinc-800" placeholder="type here." value={text} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => { setText(e.target.value) }} />
                 {/* data updates either at enter or onblur to keep redux calls minimal  */}
-                </div> 
+  </div> 
+                :
+                <div className="dark:bg-zinc-800">
+                <span className=" font-Nunito font-semibold dark:text-zinc-200
+                           rounded text-[12px] flex flex-inline items-center  p-1 px-2"> Some Settings are only available for node of type "message" other nodes are just for demonstration</span>
+                           
+                           <span className=" font-Nunito font-semibold dark:text-zinc-200
+                           rounded text-[12px] flex flex-inline items-center  p-1 px-2"> You can change title by double clicking on it or appearance from below</span>
+                           
+               </div>
                 
             }
                 
